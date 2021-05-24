@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通数组</title>
+    <script src="./script/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-for="(item,index) in list">
+            {{item}}----->{{index}}
+        </p>
+        <p v-for="(user,i) in users">
+            {{user.id}}---->{{user.name}}----->{{i}}
+        </p>
+        <p v-for="(val,key,index) in emp">
+            键是：{{key}}--->值是：{{val}}--->索引:{{index}}
+        </p>
+        <p v-for="count in 10">
+            第{{count}}次循环
+        </p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            list: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            users: [{
+                id: 1,
+                name: "罗为兴"
+            }, {
+                id: 2,
+                name: "木子"
+            }],
+            emp: {
+                id: 20181439,
+                name: "罗为兴",
+                gender: "男",
+                salary: 12000,
+                email: "2386292209@qq.com"
+            }
+        }
+    })
+</script>
+
+</html>

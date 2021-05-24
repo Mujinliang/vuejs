@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if判断</title>
+    <script src="./script/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="flag">
+            这是使用了v-if的p标签
+        </p>
+        <p v-else>
+            这是使用了v-else的p标签
+        </p>
+        <p v-show="flag">
+            这是使用v-show的p标签
+        </p>
+        <p v-if="code=='A'">A</p>
+        <p v-else-if="code=='B'">B</p>
+        <p v-else-if="code=='C'">C</p>
+        <p v-else>NOT A/B/C</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            flag: false,
+            code: "SA"
+        }
+    })
+</script>
+
+</html>

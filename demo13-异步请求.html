@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="./script/axios.min.js"></script>
+    <script type="text/javascript" src="./script/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el: "#app",
+        data: {
+
+        },
+        methods: {
+            init: function() {
+
+                axios.get("./data/user.json").then(function(response) {
+                    console.log(response);
+
+                })
+            }
+        },
+        created: function() {
+            this.init();
+        }
+    })
+</script>
+
+</html>

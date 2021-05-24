@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <label for="user-id">ID:</label>
+            <input type="text" v-model="id" id="user-id">
+            <label for="username">NAME:</label>
+            <input type="text" v-model="name" id="username">
+            <input type="button" value="添加" @click="btnadd">
+        </div>
+        <p v-for="user in list" :key="user.id">
+            <input type="radio">{{user.id}}---{{user.name}}
+        </p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            id: "aaaa",
+            name: "bbbb",
+            list: [{
+                id: 1,
+                name: '李斯'
+            }, {
+                id: 2,
+                name: '嬴政'
+            }, {
+                id: 3,
+                name: '赵高'
+            }, {
+                id: 4,
+                name: '韩非'
+            }, {
+                id: 5,
+                name: '荀子'
+            }]
+
+        },
+        methods: {
+            /*  btnadd: function() {
+                 this.list.push({
+                     id: this.id,
+                     name: this.name
+                 })
+             } */
+            btnadd: function() {
+                this.list.unshift({
+                    id: this.id,
+                    name: this.name
+                })
+            }
+        }
+    });
+</script>
+
+</html>

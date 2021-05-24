@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text与v-html</title>
+    <script src="./script/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-text="message"></div>
+        <div v-html="message"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    new Vue({
+        el: "#app",
+        data: {
+            message: "<p style='color:pink'>不学回去</p>"
+        }
+    })
+</script>
+
+</html>
